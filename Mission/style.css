@@ -1,0 +1,49 @@
+* {
+    max-width: 600px;
+}
+
+body {
+    font-family: "Times New Roman", Times, serif;
+}
+
+#sub {
+    color: #006eb6;
+    letter-spacing: .09rem;
+    text-align: center;
+    
+}
+
+header {
+    text-align: center;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+}
+
+img {
+    line-height: 1.5rem;
+    max-width: 110px;
+    margin-left: auto;
+    margin-right: auto;
+    display:block;
+}
+
+#box {
+    border: 1px solid black;
+    width: calc(100% - 20px);
+    height: calc(100% - 20px);
+    margin: 2rem;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    padding: 2.5rem;
+    padding-left: 5rem;
+    padding-right: 5rem;
+}
+
+li {
+    margin: 20px;
+}
+
+hr {
+    max-width: 100%;
+}
