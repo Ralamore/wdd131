@@ -20,6 +20,7 @@ body {
     font-family: var(--primary-font);
     font-size: 1.2em;
     text-align: center;
+    margin: 0;
 }
 
 .headline {
@@ -37,6 +38,8 @@ header,
 footer {
     background-color: var(--primary-color);
     width:100%;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 footer {
@@ -44,8 +47,17 @@ footer {
     padding-left: 15rem;
 }
 
-a {
+.menuItem {
+    display: none;
+}
+
+.hide {
     display: block;
+}
+
+h1,
+p {
+    margin: 0;
 }
 
 h2 {
@@ -58,7 +70,7 @@ h2 {
     gap: 1rem;
 }
 
-img {
+figure>img {
     max-width: 100%;
     height: 250px;
     width: 250px;
@@ -67,11 +79,47 @@ img {
     box-shadow: 8px 8px 5px rgba(0, 0, 0, 0.5);
 }
 
+.viewer {
+    position: fixed;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    max-height: 100%;
+    max-width: 100%;
+    background-color: rgba(0, 0, 0, 0.75);
+    place-self: center;
+    color: white;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    overflow: hidden;
+    box-sizing: border-box;
+    justify-self: center;
+    align-self: center;
+}
+
+.close-viewer {
+    grid-row: 1;
+    justify-self: end;
+    margin: 10px;
+    cursor: pointer;
+}
+
+div>img {
+    grid-row: 2;
+    max-height:80%;
+    max-width: 80%;
+    object-fit: contain;
+    justify-self: center;
+    align-self: center;
+    overflow: hidden;
+}
+
 @media screen and (min-width: 700px) {
     .gallery {
         grid-template-columns: 1fr 1fr;
       }
-    a {
+    .menuItem {
         display:none;
     }
 }
@@ -80,11 +128,15 @@ img {
     .gallery {
         grid-template-columns: 1fr 1fr 1fr;
     }
-    button {
+    nav>button {
         display: none;
     }
-    a {
+    .menuItem {
         display: inline;
         margin: 5rem;
+    }
+    .viewer {
+        max-height: 90%;
+        max-width: 85%;
     }
 }

@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --gold-color: #EFC69B;
+    --red-color: #AF1B3F;
+    --dark-color: #473144;
+    --text-dark: #333;
+    --text-light: #ebebeb;
+    --primary-font: Helvetica, Arial, sans-serif;
+    --title-font: "Lora", Impact, serif;
+}
+
+body {
+    font-family: var(--primary-font);
+    color: var(--dark-color);
+}
+
+.skiptocontent a {
+    position: absolute;
+    top: -40px;
+        
+}
+.skiptocontent a:focus {
+    top: 0;
+}
+
+main {
+    display:grid;
+    grid-template-columns: 70% 10%;
+    gap: 10rem;
+    padding: 5rem;
+}
+
+h1 {
+    font-family: var(--title-font);
+    justify-self: center;
+    align-self: center;
+    padding: 1.5rem;
+}
+
+hr {
+    border-color: var(--gold-color)
+}
+
+/* In the mockup it appears that the navigation links do not go all 
+the way to the right edge. Try setting a max-width and centering the 
+block by setting margin: 0 auto; */
+
+ul {
+    display:grid;
+    grid-template-columns: 100px 100px 100px;
+    justify-content: end;
+    justify-items: end;
+    max-width: px;
+    margin: 0 auto;
+    font-size: large;
+    padding: 1rem;
+}
+
+li {
+    list-style-type: none;
+}
+
+a {
+    color: var(--red-color);
+}
+
+article {
+    display:grid;
+    grid-template-columns: 20% 60%;
+}
+
+.reviews {
+    justify-content: end;
+    justify-items: end;
+    padding: 20px;
+}
+
+#date {
+    font-size: large;
+}
+
+.book {
+    width: auto;
+    height: auto;
+    border: 1px solid white;
+    padding: 20px;
+    border-left-color: var(--gold-color);
+    margin: auto;
+}
+
+.cover {
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.bTitle {
+    color: var(--red-color);
+    font-family: var(--title-font);
+}
+
+.filters {
+    width: auto;
+    height: auto;
+    border: 5px solid gray;
+    margin: 0;
+    border-color: var(--gold-color);
+}
