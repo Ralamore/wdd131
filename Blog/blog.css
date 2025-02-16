@@ -25,10 +25,9 @@ body {
 }
 
 main {
-    display:grid;
-    grid-template-columns: 70% 10%;
-    gap: 10rem;
-    padding: 5rem;
+    display: grid;
+    grid-template-columns: 80% 20%;
+    padding: 1rem 2rem;
 }
 
 h1 {
@@ -91,9 +90,9 @@ article {
 
 .cover {
     display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
 }
 
 .bTitle {
