@@ -56,7 +56,7 @@ label {
 
 #bar {
     background-color: darkslategray;
-    height: 50px;
+    height: 40px;
     grid-column: 1 / 3;
 }
 
