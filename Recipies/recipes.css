@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Lora:ital,wght@0,400..700;1,400..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+ :root {
+ --primary-color: #1B98E0;
+ --secondary-color: #59c3c3;
+ --text-dark: #333;
+ --text-light: #ebebeb;
+ --primary-font: Arial, Helvetica,sans-serif;
+ --secondary-font: "Amatic SC", sans-serif;
+}
+
+/* * {
+    border: 1px solid red;
+} */
+
+body {
+    font-family: var(--secondary-font);
+}
+
+header {
+    display: flex;
+    gap: .5rem;
+    align-items: center;
+    justify-content: center;
+    
+    img {
+        max-height: 100px;
+    }
+
+    h1 {
+        font-size: 4em;
+    }
+}
+
+.search-row {
+    display: flex;
+    margin: 1rem;
+    border-radius: 5px;
+
+    img {
+        height: 20px;
+    }
+
+    input {
+        width: 100%;
+    }
+}
+
+.recipe {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    .recipe-image {
+        height: 300%;
+    }
+    span {
+        font-family: var(--primary-font);
+    }
+}
+
+@media screen and (min-width: 500px) {
+    .recipe {
+        display: flex;
+        border: 1px solid black;
+    }
+}

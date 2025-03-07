@@ -1,14 +1,11 @@
-* {
-    max-width: 600px;
-}
-
 body {
     font-family: "Times New Roman", Times, serif;
+    max-width: 600px;
 }
 
 #sub {
     color: #006eb6;
-    letter-spacing: .09rem;
+    letter-spacing: .1rem;
     text-align: center;
     
 }
@@ -38,6 +35,10 @@ img {
     padding: 2.5rem;
     padding-left: 5rem;
     padding-right: 5rem;
+}
+
+#content {
+    
 }
 
 li {
