@@ -16,7 +16,7 @@ header {
     text-transform: uppercase;
 }
 
-img {
+img { 
     line-height: 1.5rem;
     max-width: 110px;
     margin-left: auto;
@@ -37,14 +37,19 @@ img {
     padding-right: 5rem;
 }
 
-#content {
-    
-}
-
 li {
     margin: 20px;
 }
 
 hr {
     max-width: 100%;
+}
+
+.dark {
+    background-color: #333;
+    color: white;
+}
+
+.dark h2 {
+    color: #4F9ACF;
 }
