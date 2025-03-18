@@ -37,6 +37,11 @@
   fieldset {
     margin-bottom: 2em;
   }
+  .participants {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
   input,
   select,
   textarea {
@@ -160,4 +165,12 @@
       width: 100%;
     }
   }
-   
+  
+  @media (min-width: 1023px) {
+    .participants {
+      grid-template-columns: 1fr 1fr;
+    }
+    #add {
+      grid-column: span 2;
+    }
+  }

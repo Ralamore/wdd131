@@ -88,8 +88,7 @@ function searchList2(list, query) {
         return (
             item.name.toLowerCase().includes(query.toLowerCase()) || 
             item.description.toLowerCase().includes(query.toLowerCase()) ||
-            item.tags.toLowerCase().includes(query.toLowerCase())
-
+            item.tags.find((tag) => tag.toLowerCase().includes(query.toLowerCase()))
         );
     }
     return list.filter(searchCallback);
@@ -97,3 +96,14 @@ function searchList2(list, query) {
 
 filteredList = searchList2(hikes, 'al');
 console.log(filteredList);
+
+hikes.sort((a,b) => a.distance < b.distance);
+
+hikes.sort((a,b) => {
+    // const aDistance = a.distance.replace(' miles', '');
+    const aDistance = parseFloat(a.distance);
+    const bDistance = parseFloat(b.distance);
+    return aDistance - bDistance
+});
+
+console.log(hikes);
