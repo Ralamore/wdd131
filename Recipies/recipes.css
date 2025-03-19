@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Lora:ital,wght@0,400..700;1,400..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
- :root {
- --primary-color: #1B98E0;
- --secondary-color: #59c3c3;
- --text-dark: #333;
- --text-light: #ebebeb;
- --primary-font: Arial, Helvetica,sans-serif;
- --secondary-font: "Amatic SC", sans-serif;
+:root {
+    --primary-color: #1B98E0;
+    --secondary-color: #59c3c3;
+    --text-dark: #333;
+    --text-light: #ebebeb;
+    --primary-font: Arial, Helvetica,sans-serif;
+    --secondary-font: "Amatic SC", sans-serif;
 }
 
 /* * {
@@ -14,6 +14,14 @@
 
 body {
     font-family: var(--secondary-font);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 2rem;
+}
+
+hr {
+    margin: 1rem;
 }
 
 header {
@@ -33,7 +41,6 @@ header {
 
 .search-row {
     display: flex;
-    margin: 1rem;
     border-radius: 5px;
 
     img {
@@ -45,21 +52,92 @@ header {
     }
 }
 
+
+
 .recipe {
     display: flex;
     flex-direction: column;
     border: 1px solid black;
-    .recipe-image {
-        height: 300%;
+    border-radius: 10px;
+    padding: 1rem;
+    padding-bottom: 3rem;
+    margin-bottom: 5rem;
+
+    img {
+        max-width: fit-content;
     }
     span {
         font-family: var(--primary-font);
     }
+    h2 {
+        font-size: 2rem;
+        color: var(--primary-color);
+        padding: 0px;
+        padding-top: 1rem;
+        margin: 0px;
+    }
+    .tag-row {
+        margin-top: 8px;
+        align-self: left; 
+    }
+    .tag {
+        border: 1px solid black;
+        padding: 5px;
+        padding-left: 10px;
+        padding-right: 10px;
+        font-size: 1.25rem;
+    }
+
 }
 
-@media screen and (min-width: 500px) {
-    .recipe {
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+
+    .social {
         display: flex;
-        border: 1px solid black;
+        flex-direction: row;
+        justify-content: center;
     }
+
+    #footer-txt {
+        font-family: var(--primary-font);
+        color: var(--primary-color);
+        text-align: center;
+        text-decoration: none;
+        font-size: 15px;
+    }
+
+    a>img {
+        max-height: 3.5rem;
+        width: 4rem;
+        flex-shrink: 0;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .recipe {
+        flex-direction: row;
+        gap: 20px;
+        img {
+            order: 1;
+        }
+        #rec-info {
+            order: 2;
+        }
+    }
+
+    footer {
+        flex-direction: row-reverse;
+        justify-content: space-between;
+    }
+}
+
+@media screen and (max-width: 960px) {
+    body {
+        max-width: 960px;
+        margin: 0 auto;
+    } 
 }

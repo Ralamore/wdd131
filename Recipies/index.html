@@ -6,8 +6,15 @@
         <meta name="description" content="A book of recipes">
         <meta name="author" content="Isaac Webb">
         <link href="recipes.css" rel="stylesheet">
-        <script src="main.js" module></script>
+        <link rel="icon" type="image/x-icon" href="images/recipe-book.png">
+        <!-- <script src="main.js" type="module"></script> -->
         <title>Recipe Book</title>
+        <meta property="og:title" content="Recipe Book">
+        <meta property="og:type" content="website" />
+        <meta property="og:description" content="A book of recipes">
+        <meta property="og:image" content="images/chocolate-chip-cookies.jpg">
+        <meta property="og:url" content="https://ralamore.github.io/wdd131/Reicipes/">
+        <meta name="twitter:card" content="images/chocolate-chip-cookies.jpg">
     </head>
 <body>
     <header>
@@ -24,17 +31,19 @@
         <hr>
         <article class="recipe">
             <img class="recipe-image" src="images/apple-crisp.jpg" alt="a bowl of apple crisp with ice cream">
-            <div class="tag-row">
-                <span>dessert</span>
-            </div>
-            <h2>Apple Crisp</h2>
-            <span class="rating" role="img" aria-label="Rating: 4 out of 5 stars">
-                <span aria-hidden="true" class="icon-star">⭐</span>
-                <span aria-hidden="true" class="icon-star">⭐</span>
-                <span aria-hidden="true" class="icon-star">⭐</span>
-                <span aria-hidden="true" class="icon-star-empty">⭐</span>
-                <span aria-hidden="true" class="icon-star-empty">☆</span>
-            </span>
+            <section id="rec-info">
+                <div class="tag-row">
+                    <span class="tag">dessert</span>
+                </div>
+                <h2>Apple Crisp</h2>
+                <span class="rating" role="img" aria-label="Rating: 4 out of 5 stars">
+                    <span aria-hidden="true" class="icon-star">⭐</span>
+                    <span aria-hidden="true" class="icon-star">⭐</span>
+                    <span aria-hidden="true" class="icon-star">⭐</span>
+                    <span aria-hidden="true" class="icon-star">⭐</span>
+                    <span aria-hidden="true" class="icon-star-empty">☆</span>
+                </span>
+            </section>
         </article>
     </main>
     <footer>
@@ -43,7 +52,7 @@
             <a href="#"><img src="images/youtube_icon.svg" alt="youtube icon"></a>
             <a href="#"><img src="images/pinterest_icon.svg" alt="pintrest icon"></a>
         </div>
-        <a href="https://www.flaticon.com/free-icons/recipe" title="recipe icons">
+        <a id="footer-txt" href="https://www.flaticon.com/free-icons/recipe" title="recipe icons">
             Recipe icons created by Freepik - Flaticon
         </a>
     </footer>
