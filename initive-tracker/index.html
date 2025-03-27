@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Homepage for D&D 5e Initive Tracker">
+        <meta name="author" content="Isaac Webb">
+        <meta property="og:title" content="Initive Tracker">
+        <meta property="og:type" content="website" />
+        <meta property="og:description" content="Homepage for D&D 5e Inivive Tracker">
+        <meta property="og:image" content="#"> <!-- tk -->
+        <meta property="og:url" content="https://ralamore.github.io/wdd131/initive-tracker/">
+        <meta name="twitter:card" content="#"> <!-- tk -->
+        <link rel="icon" type="image/x-icon" href="images/logo-Isaac-Webb.png">
+
+        <link href="styles.css" rel="stylesheet">
+        <script src="scripts.js" type="module"></script>
+        <title>Homepage | Initive Tracker 5e</title>
+    </head>
+</head>
+<body>
+    <div class="skiptocontent">
+        <a href="#maincontent">skip to main content</a>
+    </div>
+    <header>
+        <img src="images/logo-Isaac-Webb.png" alt="Dragon logo">
+        <h1>Initive Tracker</h1>
+    </header>
+
+    <main id="main-content">
+        <h1>Welcome to the Initive Tracker</h1>
+
+        <p>This is how to use the sight! Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+        
+        <!-- Example Player Block from in_tracker page -->
+        <div class="player-block">
+            <section class="block-head">
+                <h4><b>Skreet</b></h4>
+                <img class="class-icon" src="images/Class Icon - Wizard-1.png" alt="Class Icon">
+            </section>
+            <section class="block-items">
+                <div>AC: <b>13</b></div>
+                <div>Max HP: <b>32</b></div>
+                <div>PP: <b>12</b></div>
+                <div>Spell Save DC: <b>16</b></div>
+                <section class="block-head">
+                    <button class="dead">Dead</button>
+                    <div> Initive: <b>3</b></div>
+                    <!-- <input name="initive-roll" type="text" size="3" required placeholder="Roll"> -->
+                </section>
+                <!-- Dropdown -->
+                <label for="conditions">Conditions</label>
+                <select name="conditions" class="conditions">
+                    <option selected="" value=""></option>
+                    <option value="conecentration">Concentration</option>
+                    <option value="unconscious">Unconscious</option>
+                    <option value="blinded">Blinded</option>
+                    <option value="charmed">Charmed</option>
+                    <option value="frightened">Frightened</option>
+                    <option value="incapacitated">Incapacitated</option>
+                    <option value="invisible">Invisible</option>
+                    <option value="paralyzed">Paralyzed</option>
+                    <option value="petrified">Petrified</option>
+                    <option value="poisoned">Poisoned</option>
+                    <option value="prone">Prone</option>
+                    <option value="restrained">Restrained</option>
+                    <option value="stunned">Stunned</option>
+                    <option value="petrified">Petrified</option>
+                    <option value="exhaustion">Exhaustion</option>
+                </select>
+                
+            </section>
+        </div>
+    </main>
+    <form>
+        <fieldset class="players">
+        <legend>Player Information</legend>
+        <section class="player1">
+            <p>Player 1</p>
+            <div class="item">
+            <label for="fname">Name: <span>*</span></label>
+            <input id="fname" type="text" name="fname" value="" required>
+            </div>
+            <div class="item activities">
+            <label for="fHP">Max HP: <span>*</span></label>
+            <input id="fHP" type="number" name="HP" required>
+            </div>
+            <div class="item">
+            <label for="fAC">Armor Class: <span>*</span></label>
+            <input id="fAC" type="number" name="AC" required>
+            </div>
+            <div class="item">
+            <label for="fSS">Spell Save DC: <span>*</span></label>
+            <input id="fSS" type="number" name="SS" required>
+            </div>
+            <div class="item">
+                <label for="fPP">Passive Perception: <span>*</span></label>
+                <input id="fPP" type="number" name="PP" required>
+            </div>
+            <div class="item">
+            <label for="fclass">Class <span>*</span></label>
+            <select id="fclass" required>
+                <option selected="" value="" disabled=""></option>
+                <option value="artificer">Artificer</option>
+                <option value="barbarian">Barbarian</option>
+                <option value="cleric">Cleric</option>
+                <option value="druid">Druid</option>
+                <option value="fighter">Fighter</option>
+                <option value="monk">Monk</option>
+                <option value="paladin">Paladin</option>
+                <option value="ranger">Ranger</option>
+                <option value="rogue">Rogue</option>
+                <option value="sorcerer">Sorcerer</option>
+                <option value="warlock">Warlock</option>
+                <option value="wizard">Wizard</option>
+            </select>
+            </div>
+        </section>
+        <button type="button" id="add">Add Player</button>
+        </fieldset>
+
+        <fieldset>
+        <legend>Monster Information</legend>
+        
+        </fieldset>
+        <div class="btn-block">
+        <button type="submit" id="submitButton">Submit</button>
+        </div>
+    </form>
+</body>
+</html>

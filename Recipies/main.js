@@ -6,7 +6,7 @@ function getRandomIndex(maxNum) {
 
 function getEntry(list) {
     const listLength = list.length;
-    return list[getRandomIndex(listLength)];
+    return list[getRandomIndex(listLength)]
 }
 
 function recipeTemplate(recipe) {
@@ -59,13 +59,13 @@ function ratingTemplate(rating) {
 }
 
 const recipe = getEntry(recipes);
-console.log(recipeTemplate(recipe));
+console.log(recipeTemplate(recipes));
 
 function renderRecipes(recipeList) {
 	// get the element we will output the recipes into
     const parent = document.querySelector(".recipe");
 	// use the recipeTemplate function to transform our recipe objects into recipe HTML strings
-    const replacment = recipeTemplate(recipeList);
+    const replacment = recipeList.map(recipe => recipeTemplate(recipe)).join('');
 	// Set the HTML strings as the innerHTML of our output element.
     parent.innerHTML = replacment;
 }
@@ -78,41 +78,34 @@ function init() {
 }
 init();
 
-function fullFilter (query, recipe) {
-    // name, or the descriptions, or the tag list, or the ingredients list.
-    const included = ''
-    for(let i = 0; i < recipe.length; i++) {
-        if (recipe.name.toLowerCase().includes(query) || 
-            recipe.description.toLowerCase().includes(query) ||
-            recipe.tags.find((item) => item.toLowerCase().includes(query)) ||
-            recipe.ingredients.find((item) => item.toLowerCase().includes(query))) {
-                included += i;
-            }
-    }
-    return included
-}
-
-function sortFunction(a, b) {
-    return a.name.localeCompare(b.name);
-}
-
-function filterRecipes(query, recipe){
+function filterRecipes(query){
     // In that function use Array.filter to filter our recipes. 
     // You should check to see if the search term (query) shows up in the name, or the descriptions, or the tag list, or the ingredients list.
-    const filtered = recipes.filter((recipe) => fullFilter(query, recipe));
+    const filtered = recipes.filter((recipe) => {
+        const name = recipe.name.toLowerCase(); 
+        const description = recipe.description.toLowerCase();
+        const tags = recipe.tags.map((query) => query.toLowerCase());
+        const ingredients = recipe.recipeIngredient.map((query) => query.toLowerCase());
+
+        return name.includes(query) || 
+            description.includes(query) || 
+            tags.includes(query) || 
+            ingredients.includes(query);
+    
+    });
     // Sort the list of recipes by name alphabetically.
-    const sorted = filtered.sort(sortFunction)
+    const sorted = filtered.sort((a,b) => a.name.localeCompare(b.name));
 		return sorted
 }
 
-function searchHandler(recipe) {
-    // event.preventDefault()
+function searchHandler(e) {
+    e.preventDefault()
     // Get whatever was typed into the search input and convert it all to lowercase. (Javascript comparing is case sensitive)
     const query = document.querySelector("input").value.toLowerCase();
     // Pass the query string into a filterRecipes(query) function.
-    const filtered_results = filterRecipes(query, recipe); 
+    const filtered_results = filterRecipes(query); 
     // Render the filtered list of recipes to the page.
-    renderRecipes([filtered_results]);
+    renderRecipes(filtered_results);
 }
 
-document.querySelector(".search").addEventListener("click", searchHandler(recipes));
+document.querySelector(".search").addEventListener("click", searchHandler);
