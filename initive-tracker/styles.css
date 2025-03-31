@@ -54,6 +54,10 @@ main {
   align-items: center;
 }
 
+.main-contain {
+  margin: 26px;
+}
+
 header {
   background-color: var(--secondary-color);
   font: var(--heading-font);
@@ -63,7 +67,7 @@ header {
   align-items:center;
   justify-content: flex-start;
   hr {
-    border-color: var(--primary-color)
+    border-color: var(--primary-color);
   }
   img {
     max-width: 10rem;
@@ -71,42 +75,58 @@ header {
   }
 }
 
+#player-label {
+  margin-top: 3rem;
+  margin-bottom: 0.5rem;
+  font-family: var(--heading-font);
+}
 
 .player-block {
-  display:flex;
+  display: flex;
   flex-direction: column;
   width: 50%;
   padding: 0.5rem;
   border: 5px solid var(--secondary-color);
   margin: 3rem;
-}
+  margin-top: 0rem;
 
-.block-head {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  button {
-    order: 2;
+  .block-head {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    button {
+      order: 2;
+    }
+  }
+  
+  .class-icon {
+    max-width: 5rem;
+    justify-self: end;
+    align-self: flex-end;
+  }
+  
+  .block-items {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    button {
+      color: var(--primary-color);
+      border-color: var(--primary-color);
+      align-self: end;
+      padding: 5px; 
+      padding-top: 2px;
+      padding-bottom: 2px;
+    }
   }
 }
 
-.class-icon {
-  max-width: 5rem;
-  justify-self: end;
-  align-self: flex-end;
+fieldset {
+  border-color: var(--primary-color);
 }
 
-.block-items {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-  button {
-    color: var(--primary-color);
-    border-color: var(--primary-color);
-    align-self: end;
-    padding: 5px; 
-    padding-top: 2px;
-    padding-bottom: 2px;
-  }
+#add, #submitButton {
+  margin-top: 10px;
+  color: var(--primary-color);
+  border-color: var(--primary-color);
 }

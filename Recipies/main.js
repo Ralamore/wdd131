@@ -10,13 +10,15 @@ function getEntry(list) {
 }
 
 function recipeTemplate(recipe) {
-	return `<img class="recipe-image" src=${recipe.image} alt=${recipe.image}>
-            <section class="recipe-info">
-            ${tagsTemplate(recipe.tags)}
-                <h2>${recipe.name}</h2>
-                ${ratingTemplate(recipe.rating)}
-                <p class="recipe-description">${recipe.description}</p>
-            </section>`;
+	return `<article class="recipe">
+                <img class="recipe-image" src=${recipe.image} alt=${recipe.image}>
+                    <section class="recipe-info">
+                    ${tagsTemplate(recipe.tags)}
+                        <h2>${recipe.name}</h2>
+                        ${ratingTemplate(recipe.rating)}
+                        <p class="recipe-description">${recipe.description}</p>
+                    </section>
+                </article>`;
 }
 
 function tagsTemplate(tags) {
@@ -63,7 +65,7 @@ console.log(recipeTemplate(recipes));
 
 function renderRecipes(recipeList) {
 	// get the element we will output the recipes into
-    const parent = document.querySelector(".recipe");
+    const parent = document.querySelector(".recipe-container");
 	// use the recipeTemplate function to transform our recipe objects into recipe HTML strings
     const replacment = recipeList.map(recipe => recipeTemplate(recipe)).join('');
 	// Set the HTML strings as the innerHTML of our output element.

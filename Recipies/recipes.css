@@ -79,6 +79,7 @@ header {
     .tag-row {
         margin-top: 8px;
         align-self: left; 
+        margin-bottom: 15px;
     }
     .tag {
         border: 1px solid black;
@@ -127,6 +128,8 @@ footer {
         gap: 20px;
         img {
             order: 1;
+            max-width: 20rem;
+            max-height: 20rem;
         }
         .recipe-info {
             order: 2;
