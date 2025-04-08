@@ -81,14 +81,41 @@ header {
   font-family: var(--heading-font);
 }
 
+#index-block {
+  margin: 3rem;
+  margin-top: 0rem;
+}
+
+fieldset {
+  border-color: var(--primary-color);
+}
+
+.req {
+  color: red;
+}
+
+#add, #submitButton {
+  margin-top: 10px;
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+/* Below for in-tracker --------------------------------------- */
+
+.tracker-main {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  margin:26px;
+}
+
 .player-block {
   display: flex;
   flex-direction: column;
-  width: 50%;
+  width: 20rem;
   padding: 0.5rem;
   border: 5px solid var(--secondary-color);
-  margin: 3rem;
-  margin-top: 0rem;
+  margin: 0.25rem;
 
   .block-head {
     display: flex;
@@ -121,12 +148,45 @@ header {
   }
 }
 
-fieldset {
-  border-color: var(--primary-color);
+.conecentration {
+  background-color: lightyellow;
 }
-
-#add, #submitButton {
-  margin-top: 10px;
-  color: var(--primary-color);
-  border-color: var(--primary-color);
+.unconscious {
+  background-color: gray;
+}
+.blinded {
+  border-color: white;
+}
+.charmed {
+  background-color: lightpink;
+}
+.frightened {
+  background-color: purple;
+}
+.incapacitated {
+  background-color: lightblue;
+}
+.invisible {
+  background-color: white;
+}
+.paralyzed {
+  border-color: yellow;
+}
+.poisoned {
+  border-color: blueviolet;
+}
+.prone {
+  background-color: lightgreen;
+}
+.restrained {
+  background-color: lightsalmon;
+}
+.stunned {
+  border-color: yellowgreen;
+}
+.petrified {
+  border-color: lightslategray;
+}
+.exhaustion {
+  border-color: darkblue;
 }

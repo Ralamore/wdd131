@@ -15,86 +15,53 @@
         <link rel="icon" type="image/x-icon" href="images/logo-Isaac-Webb.gif">
 
         <link href="styles.css" rel="stylesheet">
-        <script src="i-tracker.js" type="module"></script>
+        <script src="scripts_tracker.js" type="module"></script>
         <title>Initive Tracker | Initive Tracker 5e</title>
     </head>
 
     <body>
-        
-        <div class="block">
-            <h5>
-                <b>TKCharacter Name</b> | AC:
-            </h5>
-            <label>
-                Max HP:
-            </label>
-            <label>
-                Pas. Per.:
-            </label>
-            <label>
-                Spell Save DC:
-            </label>
-            <label for="initive-roll"> Initive: </label>
-            <input name="initive-roll" type="text" size="3" required placeholder="Roll">
-            <button>Death</button>
-            <!-- Dropdown -->
-             <select name="conditions" id="">
-                <option selected="" value=""></option>
-                <option value="conecentration">Conecentration</option>
-                <option value="unconscious">Unconscious</option>
-                <option value="blinded">Blinded</option>
-                <option value="charmed">Charmed</option>
-                <option value="frightened">Frightened</option>
-                <option value="incapacitated">Incapacitated</option>
-                <option value="invisible">Invisible</option>
-                <option value="paralyzed">Paralyzed</option>
-                <option value="petrified">Petrified</option>
-                <option value="poisoned">Poisoned</option>
-                <option value="prone">Prone</option>
-                <option value="restrained">Restrained</option>
-                <option value="stunned">Stunned</option>
-                <option value="petrified">Petrified</option>
-                <option value="exhaustion">Exhaustion</option>
-             </select>
-        </div>
-        <!-- <div class="block">
-            <h5>
-                <b>TKMonster Name</b> | AC:
-            </h5>
-            <div>
-                Max HP:
+        <main class="tracker-main">
+            <div class="player-block" id="block1">
+                <section class="block-head">
+                    <h4 id="name1"><b>EXAMPLE</b></h4>
+                    <img class="class-icon" src="images/Class Icon - Wizard-1.png" alt="Class Icon" id="class1">
+                </section>
+                <section class="block-items">
+                    <div id="AC1">AC: <b>EXAMPLE</b></div>
+                    <div id="HP1">Max HP: <b>EXAMPLE</b></div>
+                    <div id="PP1">PP: <b>EXAMPLE</b></div>
+                    <div id="SS1">Spell Save DC: <b>EXAMPLE</b></div>
+                    <section class="block-head">
+                        <button class="dead" id="dead1">Dead</button>
+                        <div>
+                            <label for="initive1">Initive: </label>
+                            <input name="initive1" type="text" size="3"placeholder="Roll*" id="initive1" required>
+                        </div>
+                        </section>
+                    <!-- Dropdown -->
+                    <label for="conditions">Conditions:</label>
+                    <select name="conditions1" class="conditions" id="conditions1">
+                        <option selected="" value=""></option>
+                        <option value="conecentration">Concentration</option>
+                        <option value="unconscious">Unconscious</option>
+                        <option value="blinded">Blinded</option>
+                        <option value="charmed">Charmed</option>
+                        <option value="frightened">Frightened</option>
+                        <option value="incapacitated">Incapacitated</option>
+                        <option value="invisible">Invisible</option>
+                        <option value="paralyzed">Paralyzed</option>
+                        <option value="poisoned">Poisoned</option>
+                        <option value="prone">Prone</option>
+                        <option value="restrained">Restrained</option>
+                        <option value="stunned">Stunned</option>
+                        <option value="petrified">Petrified</option>
+                        <option value="exhaustion">Exhaustion</option>
+                    </select>
+                    <label for="rmv_conditions">Remove Conditions:</label>
+                    <select name="rmv_conditions1" class="rmv_conditions" id="rmv_conditions1">
+                        <option selected="" value="" disabled></option>
+                </section>
             </div>
-            <div>
-                Spell Save DC:
-            </div>
-            <div>
-                Speed:
-            </div>
-            <div>
-                Weaknesses:
-                <p style="padding-left: 15px;">
-                    Kinda sucks
-                </p>
-            </div>
-            Dropdown
-            <select name="conditions" id="">
-                <option selected="" value="" disabled=""></option>
-                <option value="conecentration">Conecentration</option>
-                <option value="unconscious">Unconscious</option>
-                <option value="blinded">Blinded</option>
-                <option value="charmed">Charmed</option>
-                <option value="frightened">Frightened</option>
-                <option value="incapacitated">Incapacitated</option>
-                <option value="invisible">Invisible</option>
-                <option value="paralyzed">Paralyzed</option>
-                <option value="petrified">Petrified</option>
-                <option value="poisoned">Poisoned</option>
-                <option value="prone">Prone</option>
-                <option value="restrained">Restrained</option>
-                <option value="stunned">Stunned</option>
-                <option value="petrified">Petrified</option>
-                <option value="exhaustion">Exhaustion</option>
-             </select>
-        </div> -->
+        </main>
     </body>
 </html>

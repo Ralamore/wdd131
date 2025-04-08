@@ -15,7 +15,7 @@
         <link rel="icon" type="image/x-icon" href="images/logo-Isaac-Webb.png">
 
         <link href="styles.css" rel="stylesheet">
-        <script src="scripts.js" type="module"></script>
+        <script src="scripts_index.js" type="module"></script>
         <title>Homepage | Initive Tracker 5e</title>
     </head>
 </head>
@@ -36,7 +36,7 @@
             
             <!-- Example Player Block from in_tracker page -->
             <label for="player-block" id="player-label"><b>Example Player Block</b></label>
-            <div class="player-block">
+            <div class="player-block" id="index-block">
                 <section class="block-head">
                     <h4><b>Edgin Darvis</b></h4>
                     <img class="class-icon" src="images/Class Icon - Wizard-1.png" alt="Class Icon">
@@ -63,7 +63,6 @@
                         <option value="incapacitated">Incapacitated</option>
                         <option value="invisible">Invisible</option>
                         <option value="paralyzed">Paralyzed</option>
-                        <option value="petrified">Petrified</option>
                         <option value="poisoned">Poisoned</option>
                         <option value="prone">Prone</option>
                         <option value="restrained">Restrained</option>
@@ -74,33 +73,33 @@
                 </section>
             </div>
         </main>
-        <form>
+        <form class="genForm">
             <fieldset class="players">
             <legend>Player Information</legend>
             <section class="player1">
                 <p>Player 1</p>
                 <div class="item">
-                <label for="fname">Name: <span>*</span></label>
+                <label for="fname">Name: <span class="req">*</span></label>
                 <input id="fname" type="text" name="fname" value="" required>
                 </div>
                 <div class="item activities">
-                <label for="fHP">Max HP: <span>*</span></label>
+                <label for="fHP">Max HP: <span class="req">*</span></label>
                 <input id="fHP" type="number" name="HP" required>
                 </div>
                 <div class="item">
-                <label for="fAC">Armor Class: <span>*</span></label>
+                <label for="fAC">Armor Class: <span class="req">*</span></label>
                 <input id="fAC" type="number" name="AC" required>
                 </div>
                 <div class="item">
-                <label for="fSS">Spell Save DC: <span>*</span></label>
+                <label for="fSS">Spell Save DC: <span class="req">*</span></label>
                 <input id="fSS" type="number" name="SS" required>
                 </div>
                 <div class="item">
-                    <label for="fPP">Passive Perception: <span>*</span></label>
+                    <label for="fPP">Passive Perception: <span class="req">*</span></label>
                     <input id="fPP" type="number" name="PP" required>
                 </div>
                 <div class="item">
-                <label for="fclass">Class: <span>*</span></label>
+                <label for="fclass">Class: <span class="req">*</span></label>
                 <select id="fclass" required>
                     <option selected="" value="" disabled=""></option>
                     <option value="artificer">Artificer</option>
@@ -121,12 +120,12 @@
             <button type="button" id="add">Add Player</button>
             </fieldset>
 
-            <fieldset>
-            <legend>Monster Information</legend>
+            <!-- <fieldset>
+            <legend>Monster Information</legend> -->
             
             </fieldset>
             <div class="btn-block">
-            <button type="submit" id="submitButton">Submit</button>
+            <a href="in-tracker.html"><button type="submit" id="submitButton">Submit</button></a>
             </div>
         </form>
     </section>
