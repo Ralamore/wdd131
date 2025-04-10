@@ -4,38 +4,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Homepage for D&D 5e Initive Tracker">
+    <meta name="description" content="Homepage for D&D 5e initiative Tracker">
     <meta name="author" content="Isaac Webb">
-    <meta property="og:title" content="Initive Tracker">
+    <meta property="og:title" content="Initiative Tracker">
     <meta property="og:type" content="website" />
     <meta property="og:description" content="Homepage for D&D 5e Inivive Tracker">
     <meta property="og:image" content="#"> <!-- tk todo -->
-    <meta property="og:url" content="https://ralamore.github.io/wdd131/initive-tracker/">
+    <meta property="og:url" content="https://ralamore.github.io/wdd131/initiative-tracker/">
     <meta name="twitter:card" content="#"> <!-- tk todo -->
     <link rel="icon" type="image/x-icon" href="images/logo-Isaac-Webb.png">
 
     <link href="styles.css" rel="stylesheet">
     <script src="scripts_index.js" type="module"></script>
-    <title>Homepage | Initive Tracker 5e</title>
+    <title>Homepage | Initiative Tracker 5e</title>
 </head>
 <body>
-    <div class="skiptocontent">
-        <a href="#maincontent">skip to main content</a>
-    </div>
+    <a href="#main-content" class="skiptocontent">Skip to main content</a>
+
     <header>
         <img src="images/logo-Isaac-Webb.png" alt="Dragon logo">
-        <h1>Initive Tracker</h1>
+        <h1>Initiative Tracker</h1>
     </header>
 
     <section class="main-contain">
-        <main id="main-content">
-            <h1>Welcome to the Initive Tracker</h1>
+        <main id="main-content" tabindex="-1">
+            <h2>Welcome to the Initiative Tracker</h2>
 
             <p>So, your party has once again fallen into the dangers of battle. Perhaps they ambushed a group of bandits, perhaps they got caught mid-burglary, or perhaps they finally got on the king's bad side. Whatever they've done, welcome. You're in the right place. This tracker will help you track the initiative any group.</p>
             <p>First things first, fill out the forms below with as many players as you have and as many monsters are opposing them. The information will be presented for you to track, or is used in calculating initiative order. Click "submit" when you have finished and it will take you to the tracker page. There, fill out the initiative rolls of each party member and monster, then click the button at the bottom to start the battle. The "Next Turn" button will pass the initiative and the "End Battle" button will drop initiative. Clicking the "Dead" button on the block will remove it entirely. An example player block is below.</p>
         
             <!-- Example Player Block from in_tracker page -->
-            <label for="player-block" id="player-label"><b>Example Player Block</b></label>
+            <h3 id="player-label"><b>Example Player Block</b></h3>
             <div class="player-block" id="index-block">
                 <section class="block-head">
                     <h4 id="name-index"><b>Edgin Darvis</b></h4>
@@ -50,11 +49,11 @@
                     <section class="block-head">
                         <button class="dead" id="dead-index">Dead</button>
                         <div>
-                            <label for="initive-index">Initive: <b>3</b></label>
+                            <label for="initiative-index">Initiative: <b>3</b></label>
                         </div>
                     </section>
                     <!-- Dropdown -->
-                    <label for="conditions">Conditions:</label>
+                    <label for="conditions-index">Conditions:</label>
                     <select name="conditions-index" class="conditions" id="conditions-index">
                         <option selected="" value=""></option>
                         <option value="conecentration">Concentration</option>
@@ -72,7 +71,7 @@
                         <option value="petrified">Petrified</option>
                         <option value="exhaustion">Exhaustion</option>
                     </select>
-                    <label for="rmv_conditions">Remove Conditions:</label>
+                    <label for="rmv_conditions-index">Remove Conditions:</label>
                     <select name="rmv_conditions-index" class="rmv_conditions" id="rmv_conditions-index">
                         <option selected="" value="" disabled></option>
                     </select>
@@ -89,7 +88,7 @@
                     <p>Player 1</p>
                     <div class="item">
                         <label for="fname1">Name: <span class="req">*</span></label>
-                        <input id="fname1" type="text" name="fname1" value="" required>
+                        <input id="fname1" type="text" name="fname1" value="" required size="30">
                     </div>
                     <div class="item">
                         <label for="fHP1">Max HP: <span class="req">*</span></label>
@@ -97,19 +96,19 @@
                     </div>
                     <div class="item">
                         <label for="fAC1">Armor Class: <span class="req">*</span></label>
-                        <input id="fAC1" type="number" name="AC1" required>
+                        <input id="fAC1" type="number" name="AC1" required size="30">
                     </div>
                     <div class="item">
                         <label for="fSS1">Spell Save DC: <span class="req">*</span></label>
-                        <input id="fSS1" type="number" name="SS1" required>
+                        <input id="fSS1" type="number" name="SS1" required size="30">
                     </div>
                     <div class="item">
                         <label for="fPP1">Passive Perception: <span class="req">*</span></label>
-                        <input id="fPP1" type="number" name="PP1" required>
+                        <input id="fPP1" type="number" name="PP1" required size="30">
                     </div>
                     <div class="item">
                         <label for="fdex1">Dexterity: <span class="req">*</span></label>
-                        <input id="fdex1" type="number" name="fdex1" required>
+                        <input id="fdex1" type="number" name="fdex1" required size="30">
                     </div>
                     <div class="item">
                     <label for="fclass1">Class: <span class="req">*</span></label>
@@ -141,27 +140,27 @@
                     <p>Monster 1</p>
                     <div class="item">
                         <label for="fmname1">Name: <span class="req">*</span></label>
-                        <input id="fmname1" type="text" name="fmname1" value="" required>
+                        <input id="fmname1" type="text" name="fmname1" value="" required size="30">
                     </div>
-                    <div class="item activities">
+                    <div class="item">
                         <label for="fmHP1">Max HP: <span class="req">*</span></label>
-                        <input id="fmHP1" type="number" name="mHP1" required>
+                        <input id="fmHP1" type="number" name="mHP1" required size="30">
                     </div>
                     <div class="item">
                         <label for="fmAC1">Armor Class: <span class="req">*</span></label>
-                        <input id="fmAC1" type="number" name="mAC1" required>
+                        <input id="fmAC1" type="number" name="mAC1" required size="30">
                     </div>
                     <div class="item">
                         <label for="fmspeed1">Speed: <span class="req">*</span></label>
-                        <input id="fmspeed1" type="number" name="mspeed1" required>
+                        <input id="fmspeed1" type="number" name="mspeed1" required size="30">
                     </div>
                     <div class="item">
                         <label for="fmdex1">Dexterity: <span class="req">*</span></label>
-                        <input id="fmdex1" type="number" name="fmdex1" required>
+                        <input id="fmdex1" type="number" name="fmdex1" required size="30">
                     </div>
                     <!-- <div class="item">
                         <label for="fmweak1">Weaknesses: <span class="req">*</span></label>
-                        <input id="fmweak1" type="number" name="mweak1" required>
+                        <input id="fmweak1" type="number" name="mweak1" required size="30">
                     </div> -->
                     <button class="rmvMonform">Remove</button>
                 </section>

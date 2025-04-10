@@ -1,6 +1,8 @@
-// // Skip to main content
-// const mainContent = document.querySelector('#main-content');
-// mainContent.innerHTML = articles.map(renderArticles).join('');
+// Skip to main content
+document.querySelector('.skiptocontent').addEventListener('click', function () {
+    document.querySelector('#main-content').focus();
+});
+  
 
 // Form for form generation
 function sectionTemplate(section) {
@@ -8,27 +10,27 @@ function sectionTemplate(section) {
                 <p>Player ${section}</p>
                 <div class="item">
                     <label for="fname${section}">Name: <span class="req">*</span></label>
-                    <input id="fname${section}" type="text" name="fname${section}" value="" required>
+                    <input id="fname${section}" type="text" name="fname${section}" value="" required size="30">
                 </div>
-                <div class="item activities">
+                <div class="item">
                     <label for="fHP${section}">Max HP: <span class="req">*</span></label>
-                    <input id="fHP${section}" type="number" name="HP${section}" required>
+                    <input id="fHP${section}" type="number" name="HP${section}" required size="30">
                 </div>
                 <div class="item">
                     <label for="fAC${section}">Armor Class: <span class="req">*</span></label>
-                    <input id="fAC${section}" type="number" name="AC${section}" required>
+                    <input id="fAC${section}" type="number" name="AC${section}" required size="30">
                 </div>
                 <div class="item">
                     <label for="fSS${section}">Spell Save DC: <span class="req">*</span></label>
-                    <input id="fSS${section}" type="number" name="SS${section}" required>
+                    <input id="fSS${section}" type="number" name="SS${section}" required size="30">
                 </div>
                 <div class="item">
                     <label for="fPP${section}">Passive Perception: <span class="req">*</span></label>
-                    <input id="fPP${section}" type="number" name="PP${section}" required>
+                    <input id="fPP${section}" type="number" name="PP${section}" required size="30">
                 </div>
                 <div class="item">
                     <label for="fdex${section}">Dexterity: <span class="req">*</span></label>
-                    <input id="fdex${section}" type="number" name="fdex${section}" required>
+                    <input id="fdex${section}" type="number" name="fdex${section}" required size="30">
                 </div>
                 <div class="item">
                 <label for="fclass${section}">Class: <span class="req">*</span></label>
@@ -57,23 +59,23 @@ function monsterTemplate (section) {
                     <p>Monster ${section}</p>
                     <div class="item">
                         <label for="fmname${section}">Name: <span class="req">*</span></label>
-                        <input id="fmname${section}" type="text" name="fmname${section}" value="" required>
+                        <input id="fmname${section}" type="text" name="fmname${section}" value="" required size="30">
                     </div>
-                    <div class="item activities">
+                    <div class="item">
                         <label for="fmHP${section}">Max HP: <span class="req">*</span></label>
-                        <input id="fmHP${section}" type="number" name="mHP${section}" required>
+                        <input id="fmHP${section}" type="number" name="mHP${section}" required size="30">
                     </div>
                     <div class="item">
                         <label for="fmAC${section}">Armor Class: <span class="req">*</span></label>
-                        <input id="fmAC${section}" type="number" name="mAC${section}" required>
+                        <input id="fmAC${section}" type="number" name="mAC${section}" required size="30">
                     </div>
                     <div class="item">
                         <label for="fmspeed${section}">Speed: <span class="req">*</span></label>
-                        <input id="fmspeed${section}" type="number" name="mspeed${section}" required>
+                        <input id="fmspeed${section}" type="number" name="mspeed${section}" required size="30">
                     </div>
                     <div class="item">
                         <label for="fmdex${section}">Dexterity: <span class="req">*</span></label>
-                        <input id="fmdex${section}" type="number" name="fmdex${section}" required>
+                        <input id="fmdex${section}" type="number" name="fmdex${section}" required size="30">
                     </div>
                     <button class="rmvMonform">Remove</button>
                 </section>`

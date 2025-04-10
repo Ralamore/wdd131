@@ -13,8 +13,8 @@ function blockTemplate(block, player) {
                 <section class="block-head">
                     <button class="dead" id="dead${block}">Dead</button>
                     <div>
-                        <label for="initive${block}">Initive: </label>
-                        <input name="initive${block}" type="text" size="3"placeholder="Roll*" id="initive${block}" required>
+                        <label for="initiative${block}">Initiative: </label>
+                        <input name="initiative${block}" type="text" size="3"placeholder="Roll*" id="initiative${block}" required>
                     </div>
                 </section>
                 <!-- Dropdown -->
@@ -57,8 +57,8 @@ function monBlockTemplate (block, monster) {
                 <section class="block-head">
                     <button class="dead" id="dead${block}">Dead</button>
                     <div>
-                        <label for="initive${block}">Initive: </label>
-                        <input name="initive${block}" type="text" size="3"placeholder="Roll*" id="initive${block}" required>
+                        <label for="initiative${block}">Initiative: </label>
+                        <input name="initiative${block}" type="text" size="3"placeholder="Roll*" id="initiative${block}" required>
                     </div>
                 </section>
                 <!-- Dropdown -->
@@ -231,10 +231,10 @@ document.getElementById('next').addEventListener('click', () => {
 
 // BATTLE START
 document.getElementById('start').addEventListener('click', () => {
-    const initInputs = document.querySelectorAll('input[name^="initive"]');
+    const initInputs = document.querySelectorAll('input[name^="initiative"]');
     const blocks = Array.from(document.querySelectorAll('.player-block, .monster-block'));
 
-    // Make sure the users have filled out the initives
+    // Make sure the users have filled out the initiatives
     for (let i = 0; i < initInputs.length; i++) {
         const input = initInputs[i];
         if (!input.value) {
@@ -244,23 +244,23 @@ document.getElementById('start').addEventListener('click', () => {
         }
     }
 
-    // Make the blocks into an array with their initive
+    // Make the blocks into an array with their initiative
     const blockArray = blocks.map(block => {
-        const input = block.querySelector('input[name^="initive"]');
+        const input = block.querySelector('input[name^="initiative"]');
         const dex_in = block.querySelector('div[id^="dex"]');
-        const initive = parseInt(input.value);
+        const initiative = parseInt(input.value);
         const dex = parseInt(dex_in.innerHTML);
-        return {block, initive, dex};
+        return {block, initiative, dex};
     });
 
     // Sort the blocks high to low
     blockArray.sort((a, b) => {
-        // If the initives are the same, compare dex scores
-        if (a.initive === b.initive) {
+        // If the initiatives are the same, compare dex scores
+        if (a.initiative === b.initiative) {
             return b.dex - a.dex;
         }
         else {
-            return b.initive - a.initive;
+            return b.initiative - a.initiative;
         }
     });
 
@@ -269,7 +269,7 @@ document.getElementById('start').addEventListener('click', () => {
     container.innerHTML = '';
     blockArray.forEach(entry => {container.appendChild(entry.block)});
 
-    // Replace initive boxes
+    // Replace initiative boxes
     lockInitiatives(blocks);
 
     // Hide and reveal
@@ -287,11 +287,11 @@ document.getElementById('start').addEventListener('click', () => {
 
 function lockInitiatives(blocks) {
     blocks.forEach(block => {
-        const input = block.querySelector('input[name^="initive"]');
+        const input = block.querySelector('input[name^="initiative"]');
         if (input) {
             const value = input.value;
             const b = document.createElement('b');
-            b.classList.add('initive-value');
+            b.classList.add('initiative-value');
             b.setAttribute('data-original-input', input.outerHTML);
             b.textContent = value;
 
@@ -304,7 +304,7 @@ function unlockInitiatives() {
     const blocks = document.querySelectorAll('.player-block, .monster-block');
 
     blocks.forEach(block => {
-        const b = block.querySelector('.initive-value');
+        const b = block.querySelector('.initiative-value');
         if (b) {
             const originalHTML = b.getAttribute('data-original-input');
             b.insertAdjacentHTML('afterend', originalHTML);
@@ -315,7 +315,7 @@ function unlockInitiatives() {
 
 // BATTLE END
 document.getElementById('end').addEventListener('click', () => {
-    // Reopen initive boxes
+    // Reopen initiative boxes
     unlockInitiatives();
 
     // Hide and reveal
