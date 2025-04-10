@@ -4,30 +4,34 @@
 
 // Form for form generation
 function sectionTemplate(section) {
-    return `<section class="player${section}">
+    return `<section class="player player${section}">
                 <p>Player ${section}</p>
                 <div class="item">
-                <label for="fname${section}">Name: <span>*</span></label>
-                <input id="fname${section}" type="text" name="fname${section}" value="" required>
+                    <label for="fname${section}">Name: <span class="req">*</span></label>
+                    <input id="fname${section}" type="text" name="fname${section}" value="" required>
                 </div>
                 <div class="item activities">
-                <label for="fHP${section}">Max HP: <span>*</span></label>
-                <input id="fHP${section}" type="number" name="HP${section}" required>
+                    <label for="fHP${section}">Max HP: <span class="req">*</span></label>
+                    <input id="fHP${section}" type="number" name="HP${section}" required>
                 </div>
                 <div class="item">
-                <label for="fAC${section}">Armor Class: <span>*</span></label>
-                <input id="fAC${section}" type="number" name="AC${section}" required>
+                    <label for="fAC${section}">Armor Class: <span class="req">*</span></label>
+                    <input id="fAC${section}" type="number" name="AC${section}" required>
                 </div>
                 <div class="item">
-                <label for="fSS${section}">Spell Save DC: <span>*</span></label>
-                <input id="fSS${section}" type="number" name="SS${section}" required>
+                    <label for="fSS${section}">Spell Save DC: <span class="req">*</span></label>
+                    <input id="fSS${section}" type="number" name="SS${section}" required>
                 </div>
                 <div class="item">
-                    <label for="fPP${section}">Passive Perception: <span>*</span></label>
+                    <label for="fPP${section}">Passive Perception: <span class="req">*</span></label>
                     <input id="fPP${section}" type="number" name="PP${section}" required>
                 </div>
                 <div class="item">
-                <label for="fclass${section}">Class: <span>*</span></label>
+                    <label for="fdex${section}">Dexterity: <span class="req">*</span></label>
+                    <input id="fdex${section}" type="number" name="fdex${section}" required>
+                </div>
+                <div class="item">
+                <label for="fclass${section}">Class: <span class="req">*</span></label>
                 <select id="fclass${section}" required>
                     <option selected="" value="" disabled=""></option>
                     <option value="artificer">Artificer</option>
@@ -44,7 +48,35 @@ function sectionTemplate(section) {
                     <option value="wizard">Wizard</option>
                 </select>
                 </div>
+                <button class="rmvform">Remove</button>
             </section>`;
+}
+
+function monsterTemplate (section) {
+    return `<section class="monster monster${section}">
+                    <p>Monster ${section}</p>
+                    <div class="item">
+                        <label for="fmname${section}">Name: <span class="req">*</span></label>
+                        <input id="fmname${section}" type="text" name="fmname${section}" value="" required>
+                    </div>
+                    <div class="item activities">
+                        <label for="fmHP${section}">Max HP: <span class="req">*</span></label>
+                        <input id="fmHP${section}" type="number" name="mHP${section}" required>
+                    </div>
+                    <div class="item">
+                        <label for="fmAC${section}">Armor Class: <span class="req">*</span></label>
+                        <input id="fmAC${section}" type="number" name="mAC${section}" required>
+                    </div>
+                    <div class="item">
+                        <label for="fmspeed${section}">Speed: <span class="req">*</span></label>
+                        <input id="fmspeed${section}" type="number" name="mspeed${section}" required>
+                    </div>
+                    <div class="item">
+                        <label for="fmdex${section}">Dexterity: <span class="req">*</span></label>
+                        <input id="fmdex${section}" type="number" name="fmdex${section}" required>
+                    </div>
+                    <button class="rmvMonform">Remove</button>
+                </section>`
 }
 
 // Button for form generation
@@ -55,19 +87,91 @@ document.getElementById("add").addEventListener("click", function() {
     document.querySelector('#add').insertAdjacentHTML('beforebegin', sectionTemplate(players));
 });
 
+let monsters = 1;
+document.getElementById("madd").addEventListener("click", function() {
+    monsters++;
+    
+    document.querySelector('#madd').insertAdjacentHTML('beforebegin', monsterTemplate(monsters));
+});
 
-const form = document.querySelector('#submitButton');
-form.addEventListener('click', (e) => {
+// Remove player form
+document.addEventListener('click', function (e) {
+    if (e.target && e.target.classList.contains('rmvform')) {
+        const block = e.target.closest('.player');
+        if (block) {
+            block.remove();
+            players = players - 1;
+        }
+    }
+});
+
+// Remove monster form
+document.addEventListener('click', function (e) {
+    if (e.target && e.target.classList.contains('rmvMonform')) {
+        const block = e.target.closest('.monster');
+        if (block) {
+            block.remove();
+            monsters = monsters - 1;
+        }
+    }
+});
+
+// Submit button
+document.querySelector('#submitButton').addEventListener('click', (e) => {
     e.preventDefault();
 
-    // Get values
-    const name = document.querySelector('#fname').value;
-    const playerClass = document.querySelector('#fclass').value;
+    const playersData = [];
 
-    // Store them
-    localStorage.setItem('name', name);
-    localStorage.setItem('playerClass', playerClass);
+    // Loop through all player sections
+    for (let i = 1; i <= players; i++) {
+        // Save data
+        const player = {
+            name: document.querySelector(`#fname${i}`).value,
+            HP: document.querySelector(`#fHP${i}`).value,
+            AC: document.querySelector(`#fAC${i}`).value,
+            SS: document.querySelector(`#fSS${i}`).value,
+            PP: document.querySelector(`#fPP${i}`).value,
+            dex: document.querySelector(`#fdex${i}`).value,
+            playerClass: document.querySelector(`#fclass${i}`).value,
+        };
+
+        // Check user submission
+        if (!player.name || !player.HP || !player.AC || !player.SS ||!player.PP || !player.dex|| !player.playerClass) {
+            alert(`Please fill out all fields for Player ${i}`);
+            input.focus();
+            return;
+        }  
+
+        playersData.push(player);
+    }
+
+    const monstersData = [];
+
+    // Loop through all monster sections
+    for (let i = 1; i <= monsters; i++) {
+        const monster = {
+            name: document.querySelector(`#fmname${i}`).value,
+            HP: document.querySelector(`#fmHP${i}`).value,
+            AC: document.querySelector(`#fmAC${i}`).value,
+            speed: document.querySelector(`#fmspeed${i}`).value,
+            dex: document.querySelector(`#fmdex${i}`).value,
+        };
+
+        // Check user submission
+        if (!monster.name || !monster.HP || !monster.AC || !monster.speed ||!monster.dex) {
+            alert(`Please fill out all fields for Monster ${i}`);
+            input.focus();
+            return;
+        }        
+
+        monstersData.push(monster);
+    }
+
+    // Store the whole array in localStorage (must stringify it!)
+    localStorage.setItem('players', JSON.stringify(playersData));
+    localStorage.setItem('monsters', JSON.stringify(monstersData));
 
     // Redirect to tracker page
-    window.location.href = 'in_tracker.html';
+    window.location.href = 'in-tracker.html';
 });
+

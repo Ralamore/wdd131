@@ -1,23 +1,22 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Homepage for D&D 5e Initive Tracker">
-        <meta name="author" content="Isaac Webb">
-        <meta property="og:title" content="Initive Tracker">
-        <meta property="og:type" content="website" />
-        <meta property="og:description" content="Homepage for D&D 5e Inivive Tracker">
-        <meta property="og:image" content="#"> <!-- tk -->
-        <meta property="og:url" content="https://ralamore.github.io/wdd131/initive-tracker/">
-        <meta name="twitter:card" content="#"> <!-- tk -->
-        <link rel="icon" type="image/x-icon" href="images/logo-Isaac-Webb.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Homepage for D&D 5e Initive Tracker">
+    <meta name="author" content="Isaac Webb">
+    <meta property="og:title" content="Initive Tracker">
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="Homepage for D&D 5e Inivive Tracker">
+    <meta property="og:image" content="#"> <!-- tk todo -->
+    <meta property="og:url" content="https://ralamore.github.io/wdd131/initive-tracker/">
+    <meta name="twitter:card" content="#"> <!-- tk todo -->
+    <link rel="icon" type="image/x-icon" href="images/logo-Isaac-Webb.png">
 
-        <link href="styles.css" rel="stylesheet">
-        <script src="scripts_index.js" type="module"></script>
-        <title>Homepage | Initive Tracker 5e</title>
-    </head>
+    <link href="styles.css" rel="stylesheet">
+    <script src="scripts_index.js" type="module"></script>
+    <title>Homepage | Initive Tracker 5e</title>
 </head>
 <body>
     <div class="skiptocontent">
@@ -39,7 +38,7 @@
             <div class="player-block" id="index-block">
                 <section class="block-head">
                     <h4><b>Edgin Darvis</b></h4>
-                    <img class="class-icon" src="images/Class Icon - Wizard-1.png" alt="Class Icon">
+                    <img class="class-icon" src="images/Class Icon - Bard-1.png" alt="Class Icon">
                 </section>
                 <section class="block-items">
                     <div>AC: <b>14</b></div>
@@ -75,59 +74,97 @@
         </main>
         <form class="genForm">
             <fieldset class="players">
-            <legend>Player Information</legend>
-            <section class="player1">
-                <p>Player 1</p>
-                <div class="item">
-                <label for="fname">Name: <span class="req">*</span></label>
-                <input id="fname" type="text" name="fname" value="" required>
-                </div>
-                <div class="item activities">
-                <label for="fHP">Max HP: <span class="req">*</span></label>
-                <input id="fHP" type="number" name="HP" required>
-                </div>
-                <div class="item">
-                <label for="fAC">Armor Class: <span class="req">*</span></label>
-                <input id="fAC" type="number" name="AC" required>
-                </div>
-                <div class="item">
-                <label for="fSS">Spell Save DC: <span class="req">*</span></label>
-                <input id="fSS" type="number" name="SS" required>
-                </div>
-                <div class="item">
-                    <label for="fPP">Passive Perception: <span class="req">*</span></label>
-                    <input id="fPP" type="number" name="PP" required>
-                </div>
-                <div class="item">
-                <label for="fclass">Class: <span class="req">*</span></label>
-                <select id="fclass" required>
-                    <option selected="" value="" disabled=""></option>
-                    <option value="artificer">Artificer</option>
-                    <option value="barbarian">Barbarian</option>
-                    <option value="cleric">Cleric</option>
-                    <option value="druid">Druid</option>
-                    <option value="fighter">Fighter</option>
-                    <option value="monk">Monk</option>
-                    <option value="paladin">Paladin</option>
-                    <option value="ranger">Ranger</option>
-                    <option value="rogue">Rogue</option>
-                    <option value="sorcerer">Sorcerer</option>
-                    <option value="warlock">Warlock</option>
-                    <option value="wizard">Wizard</option>
-                </select>
-                </div>
-            </section>
-            <button type="button" id="add">Add Player</button>
+                <legend>Player Information</legend>
+                <section class="player player1">
+                    <p>Player 1</p>
+                    <div class="item">
+                        <label for="fname1">Name: <span class="req">*</span></label>
+                        <input id="fname1" type="text" name="fname1" value="" required>
+                    </div>
+                    <div class="item">
+                        <label for="fHP1">Max HP: <span class="req">*</span></label>
+                        <input id="fHP1" type="number" name="HP1" required>
+                    </div>
+                    <div class="item">
+                        <label for="fAC1">Armor Class: <span class="req">*</span></label>
+                        <input id="fAC1" type="number" name="AC1" required>
+                    </div>
+                    <div class="item">
+                        <label for="fSS1">Spell Save DC: <span class="req">*</span></label>
+                        <input id="fSS1" type="number" name="SS1" required>
+                    </div>
+                    <div class="item">
+                        <label for="fPP1">Passive Perception: <span class="req">*</span></label>
+                        <input id="fPP1" type="number" name="PP1" required>
+                    </div>
+                    <div class="item">
+                        <label for="fdex1">Dexterity: <span class="req">*</span></label>
+                        <input id="fdex1" type="number" name="fdex1" required>
+                    </div>
+                    <div class="item">
+                    <label for="fclass1">Class: <span class="req">*</span></label>
+                    <select id="fclass1" required>
+                        <option selected="" value="" disabled=""></option>
+                        <option value="artificer">Artificer</option>
+                        <option value="barbarian">Barbarian</option>
+                        <option value="cleric">Cleric</option>
+                        <option value="druid">Druid</option>
+                        <option value="fighter">Fighter</option>
+                        <option value="monk">Monk</option>
+                        <option value="paladin">Paladin</option>
+                        <option value="ranger">Ranger</option>
+                        <option value="rogue">Rogue</option>
+                        <option value="sorcerer">Sorcerer</option>
+                        <option value="warlock">Warlock</option>
+                        <option value="wizard">Wizard</option>
+                    </select>
+                    </div>
+                    <button class="rmvform">Remove</button>
+                </section>
+
+                <button type="button" id="add">Add Player</button>
             </fieldset>
 
-            <!-- <fieldset>
-            <legend>Monster Information</legend> -->
-            
+            <fieldset class="monsters">
+                <legend>Monster Information</legend>
+                <section class="monster monster1">
+                    <p>Monster 1</p>
+                    <div class="item">
+                        <label for="fmname1">Name: <span class="req">*</span></label>
+                        <input id="fmname1" type="text" name="fmname1" value="" required>
+                    </div>
+                    <div class="item activities">
+                        <label for="fmHP1">Max HP: <span class="req">*</span></label>
+                        <input id="fmHP1" type="number" name="mHP1" required>
+                    </div>
+                    <div class="item">
+                        <label for="fmAC1">Armor Class: <span class="req">*</span></label>
+                        <input id="fmAC1" type="number" name="mAC1" required>
+                    </div>
+                    <div class="item">
+                        <label for="fmspeed1">Speed: <span class="req">*</span></label>
+                        <input id="fmspeed1" type="number" name="mspeed1" required>
+                    </div>
+                    <div class="item">
+                        <label for="fmdex1">Dexterity: <span class="req">*</span></label>
+                        <input id="fmdex1" type="number" name="fmdex1" required>
+                    </div>
+                    <!-- <div class="item">
+                        <label for="fmweak1">Weaknesses: <span class="req">*</span></label>
+                        <input id="fmweak1" type="number" name="mweak1" required>
+                    </div> -->
+                    <button class="rmvMonform">Remove</button>
+                </section>
+
+                <button type="button" id="madd">Add Monster</button>
             </fieldset>
+
             <div class="btn-block">
-            <a href="in-tracker.html"><button type="submit" id="submitButton">Submit</button></a>
+            <button type="submit" id="submitButton">Submit</button>
             </div>
         </form>
     </section>
+
+    <footer></footer>
 </body>
 </html>
