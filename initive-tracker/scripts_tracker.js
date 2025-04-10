@@ -39,6 +39,7 @@ function blockTemplate(block, player) {
                 <label for="rmv_conditions">Remove Conditions:</label>
                 <select name="rmv_conditions${block}" class="rmv_conditions" id="rmv_conditions${block}">
                     <option selected="" value="" disabled></option>
+                </select>
             </section>
         </div>`;
 }
@@ -158,7 +159,6 @@ document.addEventListener('change', (e) => {
         }
     }
 });
-
 function rmvTemplate(theme) {
     const capTheme = theme.charAt(0).toUpperCase() + theme.slice(1);
     return `<option value="${theme}">${capTheme}</option>`;
@@ -186,31 +186,47 @@ document.addEventListener('click', function (e) {
 let count = 0;
 let round = 0;
 let mins = 0;
+let sec = true;
 document.getElementById('next').addEventListener('click', () => {
     count++;
+    const allBlocks = document.querySelectorAll('.player-block, .monster-block');
     // When we get to the top of the order increase the round
-    if(count == (document.querySelectorAll('.player-block, .monster-block').length)) {
+    if(count == (allBlocks.length)) {
         round++
         document.getElementById("counter").innerHTML = round;
         count = 0;
-
         // Alert every multiple of 10 how many minutes it has been
         if(round % 10 === 0) {
+            sec = false;
             mins++;
             if(mins === 1) {
-                alert(`It has been ${mins} minute!`)
+                document.getElementById("time").innerHTML = `${mins} minute`;
             } else {
-                alert(`It has been ${mins} minutes!`)
+                document.getElementById("time").innerHTML = `${mins} minutes`;
             }
         }
-    }
+        if(sec) {
+            document.getElementById("time").innerHTML = `${round * 6} seconds`;
+        }
+    };
     
+
+    // Move blocks to new positions
     const container = document.querySelector('.tracker-main');
     const firstBlock = container.querySelector('.player-block, .monster-block');
 
     if (firstBlock) {
         container.appendChild(firstBlock);
     }
+    
+    const updatedBlocks = container.querySelectorAll('.player-block, .monster-block');
+
+    // Update the turn and on deck names
+    const activeName = updatedBlocks[0]?.querySelector('h4')?.textContent || '';
+    const onDeckName = updatedBlocks[1]?.querySelector('h4')?.textContent || '';
+
+    document.getElementById("active").innerHTML = activeName;
+    document.getElementById("on_deck").innerHTML = onDeckName;
 });
 
 // BATTLE START
@@ -259,6 +275,14 @@ document.getElementById('start').addEventListener('click', () => {
     // Hide and reveal
     document.querySelector('.counter_sect').style.display = 'grid';
     document.querySelector('#start').style.display = 'none';
+
+    // Update the turn and on deck names
+    const allBlocks = container.querySelectorAll('.player-block, .monster-block');
+    const activeName = allBlocks[0]?.querySelector('h4')?.textContent || '';
+    const onDeckName = allBlocks[1]?.querySelector('h4')?.textContent || '';
+
+    document.getElementById("active").innerHTML = activeName;
+    document.getElementById("on_deck").innerHTML = onDeckName;
 });
 
 function lockInitiatives(blocks) {
@@ -303,4 +327,5 @@ document.getElementById('end').addEventListener('click', () => {
     count = 0;
     round = 0;
     mins = 0;
+    sec = true;
 });

@@ -31,28 +31,31 @@
         <main id="main-content">
             <h1>Welcome to the Initive Tracker</h1>
 
-            <p>This is how to use the sight! Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-            
+            <p>So, your party has once again fallen into the dangers of battle. Perhaps they ambushed a group of bandits, perhaps they got caught mid-burglary, or perhaps they finally got on the king's bad side. Whatever they've done, welcome. You're in the right place. This tracker will help you track the initiative any group.</p>
+            <p>First things first, fill out the forms below with as many players as you have and as many monsters are opposing them. The information will be presented for you to track, or is used in calculating initiative order. Click "submit" when you have finished and it will take you to the tracker page. There, fill out the initiative rolls of each party member and monster, then click the button at the bottom to start the battle. The "Next Turn" button will pass the initiative and the "End Battle" button will drop initiative. Clicking the "Dead" button on the block will remove it entirely. An example player block is below.</p>
+        
             <!-- Example Player Block from in_tracker page -->
             <label for="player-block" id="player-label"><b>Example Player Block</b></label>
             <div class="player-block" id="index-block">
                 <section class="block-head">
-                    <h4><b>Edgin Darvis</b></h4>
-                    <img class="class-icon" src="images/Class Icon - Bard-1.png" alt="Class Icon">
+                    <h4 id="name-index"><b>Edgin Darvis</b></h4>
+                    <img class="class-icon" src="images/Class Icon - Bard-1.png" alt="Class Icon" id="class-index">
                 </section>
                 <section class="block-items">
-                    <div>AC: <b>14</b></div>
-                    <div>Max HP: <b>110</b></div>
-                    <div>PP: <b>13</b></div>
-                    <div>Spell Save DC: <b>15</b></div>
+                    <div id="AC-index">AC: <b>14</b></div>
+                    <div id="HP-index">Max HP: <b>110</b></div>
+                    <div id="PP-index">PP: <b>13</b></div>
+                    <div id="dex-index" style="display:none">16</div>
+                    <div id="SS-index">Spell Save DC: <b>15</b></div>
                     <section class="block-head">
-                        <button class="dead">Dead</button>
-                        <div> Initive: <b>3</b></div>
-                        <!-- <input name="initive-roll" type="text" size="3" required placeholder="Roll"> -->
+                        <button class="dead" id="dead-index">Dead</button>
+                        <div>
+                            <label for="initive-index">Initive: <b>3</b></label>
+                        </div>
                     </section>
                     <!-- Dropdown -->
                     <label for="conditions">Conditions:</label>
-                    <select name="conditions" class="conditions">
+                    <select name="conditions-index" class="conditions" id="conditions-index">
                         <option selected="" value=""></option>
                         <option value="conecentration">Concentration</option>
                         <option value="unconscious">Unconscious</option>
@@ -68,9 +71,16 @@
                         <option value="stunned">Stunned</option>
                         <option value="petrified">Petrified</option>
                         <option value="exhaustion">Exhaustion</option>
-                    </select>   
+                    </select>
+                    <label for="rmv_conditions">Remove Conditions:</label>
+                    <select name="rmv_conditions-index" class="rmv_conditions" id="rmv_conditions-index">
+                        <option selected="" value="" disabled></option>
+                    </select>
                 </section>
             </div>
+
+            <p>If you finish and want to add or take away any monsters or players, click the back arrow on your browser to return here and make edits.</p>
+            <p>That's it! Thank you for coming, and <b>happy hunting!</b></p>
         </main>
         <form class="genForm">
             <fieldset class="players">

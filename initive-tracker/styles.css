@@ -3,9 +3,11 @@
 :root {
   /* change the values below to your colors from your palette */
   --primary-color: #C0A14D;
+  --primary-color-trans: hsl(44, 48%, 53%, 0.5);
   --secondary-color: #270014;
   --secondary-color-trans: rgb(39, 0, 20, 0.5);
   --accent1-color: #334139;
+  --accent1-color-trans: hsl(146, 12%, 23%,0.5);
   --accent2-color: #8B8687;
 
   /* change the values below to your chosen font(s) */
@@ -52,10 +54,14 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  p {
+    text-align: center;
+  }
 }
 
 .main-contain {
-  margin: 26px;
+  margin: 42px;
 }
 
 header {
@@ -63,9 +69,11 @@ header {
   font: var(--heading-font);
   color: var(--primary-color);
   display: flex;
-  gap: 3rem;
+  gap: 3.5rem;
   align-items:center;
   justify-content: flex-start;
+  padding-left: 4rem;
+
   hr {
     border-color: var(--primary-color);
   }
@@ -83,8 +91,9 @@ header {
 }
 
 .player, .monster {
-  border: 1px solid var(--secondary-color);
+  border: 1.75px solid var(--secondary-color);
   padding: 25px;
+  margin: 8px;
   width: 20rem;
   display: flex;
   flex-direction: column;
@@ -145,7 +154,7 @@ footer {
   align-items:center;
   justify-content: flex-start;
 
-  position: fixed;
+
   left: 0;
   bottom: 0;
   width: 100%;
@@ -155,10 +164,16 @@ footer {
 
 @media (min-width: 880px) {
   .players, .monsters {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
   }
   #add, #madd {
     grid-column:1;
+  }
+}
+
+@media (min-width: 1300px) {
+  .players, .monsters {
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
@@ -178,6 +193,7 @@ footer {
   flex-direction: column;
   align-items: start;
   margin:26px;
+  gap: 0.75rem;
 }
 
 .player-block, .monster-block {
@@ -185,7 +201,9 @@ footer {
   flex-direction: column;
   width: 20rem;
   padding: 0.5rem;
-  border: 5px solid var(--secondary-color);
+  border: 5px solid var(--primary-color);
+  color: var(--secondary-color);
+  background-color: var(--primary-color-trans);
   margin: 0.25rem;
 
   .block-head {
@@ -202,6 +220,7 @@ footer {
     max-width: 5rem;
     justify-self: end;
     align-self: flex-end;
+    border: 5px outset white;
   }
   
   .block-items {
@@ -219,12 +238,22 @@ footer {
   }
 }
 
+.monster-block {
+  border-color: var(--accent1-color-trans);
+  background-color: var(--accent1-color-trans);
+
+  button.dead {
+    border-color: var(--accent1-color);
+    color: var(--secondary-color);
+  }
+}
+
 .counter_sect {
   grid-column: 2;
   grid-row: 1;
   justify-self: end;
   
-  display: grid;
+  display: none;
   /* display: grid; */
   grid-template-columns: 90px 90px;
   align-items: center;
@@ -241,9 +270,25 @@ footer {
     justify-self: stretch;
   }
 
-  #end {
-    margin-top: 20px;
+  h3, p {
+    justify-self: start;
+    margin: 5px;
   }
+
+  #time_txt, #time {
+    margin: 5px;
+    margin-top: 0px;
+    justify-self: end;
+  }
+  #time {
+    justify-self: start;
+  }
+}
+
+#active, #on_deck {
+  white-space: normal;
+  word-break: break-word;
+  max-width: 100%;
 }
 
 #counter {
@@ -254,6 +299,11 @@ footer {
 
 #start {
   grid-column: 1;
+}
+
+button.dead:hover, #end:hover, button.rmvform:hover, button.rmvMonform:hover {
+  background: darkred;
+  color: whitesmoke;
 }
 
 @media (min-width: 880px) {
